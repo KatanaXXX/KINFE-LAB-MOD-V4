@@ -1,3 +1,4 @@
+
 name: Build RIPTIDE Knife Lab
 
 on:
@@ -26,13 +27,14 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build mod
-        working-directory: riptide-knife-lab
+      - name: Build RIPTIDE
+        working-directory: RIPTIDE-KNIFE-LAB-v4/RIPTIDE-KNIFE-LAB-v4/riptide-knife-lab
         run: gradle build
 
-      - name: Upload JAR
+      - name: Upload compiled JAR
         uses: actions/upload-artifact@v4
         with:
-          name: RIPTIDE-Knife-Lab-JAR
-          path: riptide-knife-lab/build/libs/*.jar
+          name: RIPTIDE-Knife-Lab-V4
+          path: RIPTIDE-KNIFE-LAB-v4/RIPTIDE-KNIFE-LAB-v4/riptide-knife-lab/build/libs/*.jar
           if-no-files-found: error
+
